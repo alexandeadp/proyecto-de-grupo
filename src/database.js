@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
-const URI = 'mongodb://localhost:27017/emprende_aprende_db';
+const URI = process.env.MONGODB_URI || "mongodb://localhost/test";
 
+mongoose.Promise = global.Promise;
 mongoose.connect(URI, {
   useNewUrlParser: true,
   useCreateIndex: true,
@@ -10,4 +11,4 @@ mongoose.connect(URI, {
 
 const conexion = mongoose.connection;
 
-conexion.once('open', () => console.log("base de datos conectada"));
+conexion.once("open", () => console.log("base de datos conectada en " + URI));

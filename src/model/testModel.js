@@ -1,4 +1,4 @@
-import { Schema, Model } from 'mongoose';
+import { Schema, model } from "mongoose";
 
 const testSchema = new Schema({
     descripcion:{
@@ -27,10 +27,11 @@ const testSchema = new Schema({
     },
     hidden: {
         type: Boolean,
-        required:true
+        required:true,
+        default: false
     }
 },{
     timestamps: true
 })
 
-module.exports = Model('test', testSchema);
+module.exports = model("Test", testSchema);

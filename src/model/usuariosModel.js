@@ -1,4 +1,4 @@
-import { Schema, Model } from 'mongoose';
+import { Schema, model } from 'mongoose';
 
 const usuariosSchema = new Schema({
     nick: {
@@ -36,4 +36,4 @@ const usuariosSchema = new Schema({
     timestamps: true
 })
 
-module.exports = Model("usuarios", usuariosSchema);
+module.exports = model("Usuarios", usuariosSchema);

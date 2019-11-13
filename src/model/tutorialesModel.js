@@ -1,4 +1,4 @@
-import { Schema, Model } from 'mongoose'
+import { Schema, model } from 'mongoose'
 
 const tutorialesSchema = new Schema({
     tecnologias_id: {
@@ -39,8 +39,8 @@ const tutorialesSchema = new Schema({
         required: true,
         default: false
     }
-}, {
+},{
     timestamps: true
 })
 
-module.exports = Model("tutoriales", tutorialesSchema);
+module.exports = model("Tutoriales", tutorialesSchema);
